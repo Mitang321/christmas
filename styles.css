@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, navy,indigo);
+    overflow: hidden;
+  }
+  
+  .falling-items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .falling {
+    position: absolute;
+    font-size: 2rem; 
+    opacity: 0.8;
+    animation: fall 10s linear infinite;
+    animation-delay: calc(-1s * var(--random-delay));
+    left: calc(100% * var(--random-start)); 
+    z-index: 2;
+  }
+  
+  .snowflake {
+    animation-duration: 12s;
+  }
+  
+  .gift {
+    animation-duration: 9s;
+    font-size: 3rem; 
+  }
+  
+  .chocolate {
+    animation-duration: 7s;
+    font-size: 2.5rem; 
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-10px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  
+  .background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .message {
+    position: absolute;
+    top: 10%;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 3px 3px 5px #000;
+  }
+  
+  .message h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px coral;
+    animation: glow 1.5s ease-in-out infinite alternate;
+  }
+  
+  .message p {
+    font-size: 1.5rem;
+    font-style: italic;
+    text-shadow: 0 0 10px coral;
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 15px coral, 0 0 30px coral;
+    }
+    100% {
+      text-shadow: 0 0 25px coral, 0 0 50px coral;
+    }
+  }
+  
+  .santa {
+    position: absolute;
+    bottom: 100px;
+    left: -300px;
+    animation: slide-left-to-right 15s linear infinite;
+  }
+  
+  .santa img {
+    width: 300px;
+    filter: drop-shadow(0 0 25px #fff);
+  }
+  
+  @keyframes slide-left-to-right {
+    0% {
+      transform: translateX(-100vw);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+  
+  .forest {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    padding: 0 10px;
+  }
+  
+  .tree {
+    position: relative;
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(to bottom, darkgreen, forestgreen);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    margin: 0 10px;
+    box-shadow: 0 0 10px 5px #ffffff;
+    animation: tree-shake 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes tree-shake {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+  
+  .tree:before,
+  .tree:after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 100px;
+    background: linear-gradient(to bottom, darkgreen, forestgreen);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    margin-top: -30px;
+  }
+  
+  .tree:before {
+    top: -50px;
+    left: 5px;
+  }
+  
+  .tree:after {
+    top: -100px;
+    left: 10px;
+  }
+  
+  .tree:before,
+  .tree:after {
+    box-shadow: 0 0 15px coral;
+  }
+  
+  .falling:nth-child(1) {
+    --random-start: 0.1;
+    --random-delay: 0;
+  }
+  .falling:nth-child(2) {
+    --random-start: 0.2;
+    --random-delay: 1;
+  }
+  .falling:nth-child(3) {
+    --random-start: 0.3;
+    --random-delay: 2;
+  }
+  .falling:nth-child(4) {
+    --random-start: 0.4;
+    --random-delay: 3;
+  }
+  .falling:nth-child(5) {
+    --random-start: 0.5;
+    --random-delay: 4;
+  }
+  .falling:nth-child(6) {
+    --random-start: 0.6;
+    --random-delay: 5;
+  }
+  .falling:nth-child(7) {
+    --random-start: 0.7;
+    --random-delay: 6;
+  }
+  .falling:nth-child(8) {
+    --random-start: 0.8;
+    --random-delay: 7;
+  }
+  
